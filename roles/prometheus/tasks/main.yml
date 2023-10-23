@@ -8,12 +8,12 @@
         url: https://packages.grafana.com/gpg.key
       when: ansible_distribution == "Ubuntu"
 
-    - name: Add Prometheus APT repository (Ubuntu)
+    - name: Add Prometheus APT repository(Ubuntu)
       apt_repository:
         repo: "deb https://packages.grafana.com/oss/deb stable main"
       when: ansible_distribution == "Ubuntu"
     
-    - name: Add Prometheus YUM repository (CentOS)
+    - name: Add Prometheus YUM repository(CentOS)
       yum_repository:
         name: prometheus
         baseurl: https://packagecloud.io/prometheus-rpm/release/el/{{ ansible_distribution_major_version }}/$basearch
